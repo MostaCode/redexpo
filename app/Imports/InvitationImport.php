@@ -29,7 +29,7 @@ class InvitationImport implements ToCollection, WithHeadingRow, SkipsEmptyRows
         $twilio = new Client($twilioSid, $twilioToken);
        foreach($rows as $row) {
             $invitation = Invitation::create([
-                'invitation_number'=>hexdec(uniqid()),
+                'invitation_number'=>mt_rand(),
                 'phone'=>$row['phone'],
                 'user_id'=>$this->agent_id,
                 'event_id'=>$this->event_id,

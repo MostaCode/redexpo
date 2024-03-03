@@ -44,7 +44,7 @@ class InvitationController extends Controller
         ]);
         $agent_id = User::where('username', $request->agent)->first()->id;
         $invitation = Invitation::create([
-            'invitation_number'=>hexdec(uniqid()),
+            'invitation_number'=>mt_rand(),
             'phone'=>$request->phone,
             'user_id'=>$agent_id,
             'event_id'=>$request->event_id,

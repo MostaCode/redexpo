@@ -31,6 +31,12 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'username'=>'required|unique:users,username',
+            'password'=>'required',
+            'name'=>'required'
+        ]);
+
         if($request->hasFile('logo')) {
             $logo = $request->file('logo');
             $upload_dir = public_path() . '/uploads';
