@@ -46,7 +46,7 @@
                         <div class="card-body">
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Enter Company Name">
+                      <input name="name" type="text" class="form-control" id="name" placeholder="Enter Company Name" value="{{old('name')}}">
                     </div>
                     <div class="form-group">
                         <label for="logo">Logo</label>
@@ -57,7 +57,7 @@
                       </div>
                     <div class="form-group">
                       <label for="name">About</label>
-                     <textarea class="form-control" name="about"></textarea>
+                     <textarea class="form-control" name="about">{{old('about')}}</textarea>
                     </div>
                     </div>
                   </div>
@@ -68,7 +68,7 @@
                         <div class="card-body">
                     <div class="form-group">
                         <label for="name">Username</label>
-                        <input type="text" name="username" class="form-control" id="name" placeholder="Enter Company Username">
+                        <input type="text" name="username" class="form-control" id="name" placeholder="Enter Company Username" value="{{old('username')}}">
                       </div>
                     <div class="form-group">
                       <label for="password">Password</label>

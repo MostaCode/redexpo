@@ -83,8 +83,8 @@ class UserController extends Controller
     {
         $user = User::find($id);
         if(!$user->hasRole('superadmin')) {
-            if($user->avatar) {
-                unlink(public_path('/uploads/avatars' . $user->avatar));
+            if(file_exists(public_path('/uploads/avatars/' . $user->avatar))) {
+                unlink(public_path('/uploads/avatars/' . $user->avatar));
             }
             $user->delete();
 

@@ -11,18 +11,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{route('companies.index')}}" class="nav-link @if(request()->is('dashboard/companies')) active @endif">
-              <i class="nav-icon fas fa-building"></i>
-              <p>
-                Companies
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="{{route('events.index')}}" class="nav-link @if(request()->is('dashboard/events')) active @endif">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Events
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('companies.index')}}" class="nav-link @if(request()->is('dashboard/companies')) active @endif">
+              <i class="nav-icon fas fa-building"></i>
+              <p>
+                Companies
               </p>
             </a>
           </li>

@@ -40,11 +40,11 @@
                           <td style="width:10%">{{$company->id}}</td>
                           <td><img style="height: 50px" src="{{asset('uploads/' . $company->logo)}}" alt=""></td>
                           <td><a href="{{route('companies.show', $company->id)}}">{{$company->name}}</a></td>
-                          <td>
-                            <a class="btn btn-small btn-info" href="{{route('companies.edit', $company->id)}}"><i class="fa fa-edit"></i> Edit</a>
-                            <a class="btn btn-small btn-warning" href="{{route('companies.show', $company->id)}}"><i class="fa fa-eye"></i> View</a>
-                            <a class="btn btn-small btn-danger" href="{{route('delete_company', $company->id)}}"><i class="fa fa-trash"></i> Delete</a>
-                            <a class="btn btn-small btn-dark" href="{{route('companies.show', $company->id)}}"><i class="fa fa-user"></i> Agents</a>
+                          <td style="width:20%">
+                            <a class="btn btn-sm btn-info" href="{{route('companies.edit', $company->id)}}"><i class="fa fa-edit"></i> Edit</a>
+                            <a class="btn btn-sm btn-warning" href="{{route('companies.show', $company->id)}}"><i class="fa fa-eye"></i> View</a>
+                            <a class="btn btn-sm btn-danger" href="{{route('delete_company', $company->id)}}"><i class="fa fa-trash"></i> Delete</a>
+                            <a class="btn btn-sm btn-dark" href="{{route('companies.show', $company->id)}}"><i class="fa fa-user"></i> Agents</a>
 
                         </td>
                         </tr>

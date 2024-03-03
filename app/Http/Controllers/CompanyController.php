@@ -46,6 +46,13 @@ class CompanyController extends Controller
             $filename = 'logo-placeholder.jpg';
         }
 
+        $company = Company::create([
+            'name'=>$request->name,
+            'logo'=>$filename,
+            'about'=>$request->about,
+            'user_id'=>1
+        ]);
+
         $company_user =  User::create([
             'name'=>$request->name,
             'username'=>$request->username,
@@ -53,15 +60,10 @@ class CompanyController extends Controller
             'password'=>bcrypt($request->password)
         ]);
 
-        $company_user->assignRole('company');
-
-        Company::create([
-            'name'=>$request->name,
-            'logo'=>$filename,
-            'about'=>$request->about,
+        $company->update([
             'user_id'=>$company_user->id
         ]);
-
+        $company_user->assignRole('company');
 
         return redirect()->route('companies.index');
     }

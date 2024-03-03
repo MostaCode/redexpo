@@ -30,6 +30,15 @@
                 <form action="{{route('agents.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                   <div class="card-body">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <div class="card card-dark" style="border: 0">
                         <div class="card-header">
                         <h3 class="card-title">Agent Details</h3>
